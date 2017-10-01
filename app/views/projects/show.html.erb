@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @project.name %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @project.users.first.email %>
+</p>
+<br>
+<br>
+<p><%= link_to "Add Progress", new_project_progress_path(@project, @progress) %></p>
+<br>
+<br>
+ <%= render @project.progresses %>
+ <br>
+ <br>
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>

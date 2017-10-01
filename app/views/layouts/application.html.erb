@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WehnuemApp</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <!-- Latest compiled and minified CSS -->
+    <%= stylesheet_link_tag 'bootstrap.css', :media => 'all' %>
+     <%= stylesheet_link_tag 'full-slider.css', :media => 'all' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://use.fontawesome.com/fc6d352727.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Asap+Condensed|Poppins" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+  </head>
+ 
+  <body>
+    <%= yield %>
+    <%= javascript_include_tag 'popper.js', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'bootstrap.js', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'scroll-reveal.js', 'data-turbolinks-track': 'reload' %>
+
+    <script>
+    $.fn.scrollReveal();  
+    </script>
+
+    <script type="text/javascript">
+
+    $(window).scroll(function () {
+        if ($(window).scrollTop() > 100) {
+            $(".navbackground").addClass('meffect');
+              $(".navbar-light").find("a.navbar-brand1").addClass("navbar-scroll");
+              $(".navbar-light").find(".navbar-nav").find("a.nav-link").addClass("navlinkscroll");
+            
+        } else {
+            $(".navbackground").removeClass('meffect');
+            $(".navbar-light").find("a.navbar-brand1").removeClass("navbar-scroll");
+        }
+    });
+
+    </script>
+  </body>
+</html>
