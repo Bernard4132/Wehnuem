@@ -14,16 +14,5 @@
 //= require turbolinks
 //= require_tree .
 
-$.fn.scrollReveal();  
+ 
 
-$(window).scroll(function () {
-        if ($(window).scrollTop() > 100) {
-            $(".navbackground").addClass('meffect');
-              $(".navbar-light").find("a.navbar-brand1").addClass("navbar-scroll");
-              $(".navbar-light").find(".navbar-nav").find("a.nav-link").addClass("navlinkscroll");
-            
-        } else {
-            $(".navbackground").removeClass('meffect');
-            $(".navbar-light").find("a.navbar-brand1").removeClass("navbar-scroll");
-        }
-    });
