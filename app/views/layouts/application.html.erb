@@ -29,24 +29,6 @@
     <%= javascript_include_tag 'bootstrap.js' %>
     <%= javascript_include_tag 'scroll-reveal.js' %>
 
-    <script>
-    $.fn.scrollReveal();  
-    </script>
-
-    <script type="text/javascript">
-
-    $(window).scroll(function () {
-        if ($(window).scrollTop() > 100) {
-            $(".navbackground").addClass('meffect');
-              $(".navbar-light").find("a.navbar-brand1").addClass("navbar-scroll");
-              $(".navbar-light").find(".navbar-nav").find("a.nav-link").addClass("navlinkscroll");
-            
-        } else {
-            $(".navbackground").removeClass('meffect');
-            $(".navbar-light").find("a.navbar-brand1").removeClass("navbar-scroll");
-        }
-    });
-
-    </script>
+   
   </body>
 </html>
