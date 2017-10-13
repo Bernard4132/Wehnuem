@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>WehnuemApp</title>
+    <title>Wehnuem Gated Community</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <!-- Latest compiled and minified CSS -->
+    
     <%= stylesheet_link_tag 'bootstrap.css', :media => 'all' %>
      <%= stylesheet_link_tag 'full-slider.css', :media => 'all' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script src="https://use.fontawesome.com/fc6d352727.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Asap+Condensed|Poppins" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
@@ -17,7 +17,14 @@
   </head>
  
   <body>
+
+    <%= render 'layouts/header' %>
+
     <%= yield %>
+
+    <%= render 'layouts/footer' %>
+
+    <%= javascript_include_tag 'application' %>
     <%= javascript_include_tag 'popper.js' %>
     <%= javascript_include_tag 'bootstrap.js' %>
     <%= javascript_include_tag 'scroll-reveal.js' %>

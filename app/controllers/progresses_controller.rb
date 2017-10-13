@@ -28,6 +28,8 @@ class ProgressesController < ApplicationController
   # POST /progresses.json
   def create
     @progress = @project.progresses.new(progress_params)
+    @projectusers = @project.users.all
+    @progress.user = current_user
     respond_to do |format|
       if @progress.save
         if params[:photos_attributes]
@@ -35,6 +37,9 @@ class ProgressesController < ApplicationController
             @progress.photos.create(progessimage: photo[:progessimage])
           end
         end
+        @projectusers.uniq.each do |user|
+        ReminderMailer.remind_notification(user, @progress).deliver_later
+      end
         format.html { redirect_to @project, notice: 'Progress was successfully added.' }
         format.json { render :show, status: :created, location: @progress }
       else

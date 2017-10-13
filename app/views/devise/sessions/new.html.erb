@@ -170,12 +170,12 @@ box-shadow: 0px 0px 35px -5px rgba(0,0,0,0.7);
 <h2 style="text-align: center; font-family: 'Poppins', sans-serif;">Log in</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, :class => "form-control", :placeholder => "Enter email" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :password %><br />
     <%= f.password_field :password, autocomplete: "off", :class => "form-control", :placeholder => "Enter password"  %>
   </div>
@@ -187,7 +187,7 @@ box-shadow: 0px 0px 35px -5px rgba(0,0,0,0.7);
     </div>
   <% end -%>
 
-  <div class="actions">
+  <div class="form-group">
     <%= f.submit "Log in", :class => "btn btn-primary" %>
   </div>
 <% end %>

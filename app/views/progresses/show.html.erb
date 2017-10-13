@@ -1,19 +1,40 @@
-<p id="notice"><%= notice %></p>
+<style type="text/css">
+.progresshold{
+  background-color: #ffffff;
+  border-radius: 10px;
+  margin: 15px;
+  padding: 20px;
+  border: 1px solid #cccccc;
+}
 
-<p>
-  <strong>Title:</strong>
-  <%= @progress.title %>
-</p>
+</style>
+<br>
+<br>
+<br>
+<br>
 
-<p>
-  <strong>Description:</strong>
-  <%= @progress.description %>
-</p>
+<div class="container">
+<div class="row">
+<div class="col-lg-12">
+<div class="progresshold">
+<h2 style="text-align: center; font-family: 'Poppins', sans-serif;"><%= @progress.title %></h2>
+<p style="font-weight: 300;"><%= markdown(@progress.description) %></p>
+<div class="row">
+<% @progress.photos.each do |photo| %>
+   <div class="col-lg-4 col-md-12 col-sm-12" style="margin-bottom: 20px;">
+ <img src="<%= photo.progessimage_url %>" class="imageresponsive" width="300px" height="200px" />
+</div>
+<% end %>
+</div>
+<%= form_for ([@progress, @progress.comments.build]) do |f| %>
+<textarea id="reply_body" name="comment[body]" rows="5" class="form-control"  placeholder="Kindly Comment here..." rows="3"></textarea>
+                    <div class="text-right" style="margin-top: 10px;">
+                        <button class="btn btn-success" type="submit">Leave a Comment</button>
+                    </div>
+<% end %>
 
-<p>
-  <strong>Project:</strong>
-  <%= @progress.project_id %>
-</p>
-
-<%= link_to 'Edit', edit_progress_path(@progress) %> |
-<%= link_to 'Back', progresses_path %>
+<%= render @progress.comments.all %>
+</div>
+</div>
+</div>
+</div>

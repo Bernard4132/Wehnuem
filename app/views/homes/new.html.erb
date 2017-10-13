@@ -188,9 +188,7 @@ box-shadow: 0px 0px 35px -5px rgba(0,0,0,0.7);
 
 
            <%= render "#{@home.current_step}_step" %>
-           <p><%= submit_tag "Continue" %></p>
- 
-           <p><%= submit_tag "Back", :name => "back_button" unless @home.first_step? %></p>
+           <p><%= submit_tag "Back", :name => "back_button" unless @home.first_step? %>  <%= submit_tag "Continue", :class => "btn btn-primary" %></p>
  
            <% end %>
           </div>

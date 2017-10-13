@@ -1,10 +1,19 @@
 Rails.application.routes.draw do
  
+  resources :houses
   resources :homes
   resources :projects do
-  	 resources :progresses
+     resources :jobs, path: :users, module: :projects
   end
-  
+
+  resources :projects do
+    resources :progresses
+  end
+
+  resources :progresses do
+    resources :comments
+  end
+ 
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: "static_pages#home"

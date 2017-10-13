@@ -1,21 +1,73 @@
-<p id="notice"><%= notice %></p>
+<style type="text/css">
 
-<p>
-  <strong>Name:</strong>
-  <%= @project.name %>
-</p>
+.aduins{
+ background:linear-gradient(0deg,rgba(0,0,0,0.8),rgba(0,0,0,0.1)),url(<%= @project.houses.first.picture %>);
+  background-position:center;
+  min-height: 260px;
+}
 
-<p>
-  <strong>User:</strong>
-  <%= @project.users.first.email %>
-</p>
-<br>
-<br>
-<p><%= link_to "Add Progress", new_project_progress_path(@project, @progress) %></p>
-<br>
-<br>
- <%= render @project.progresses %>
- <br>
- <br>
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+.alugst{
+  position: relative; 
+  top: 65px;
+}
+
+.inviteholder{
+   background-color: #ffffff;
+  border-radius: 10px;
+  margin: 15px;
+  padding: 20px;
+  border: 1px solid #cccccc;
+  margin-bottom: 50px;
+}
+
+.holdinvite{
+
+}
+
+</style>
+
+
+<section class="aduins">
+  <div class="container">
+    <div class="row" style="margin-top: 70px">
+      <div class="col-lg-12">
+        <h1 style="text-align: center; color: white; position: relative; top: 65px; font-weight: 900;  text-shadow: 1px 0px 6px rgba(0, 0, 0, 1);"><%= @project.name %></h1>
+        <p style="text-align: center; color: white; position: relative; top: 70px; font-weight: 300;  text-shadow: 1px 0px 6px rgba(0, 0, 0, 1);"><%= @project.users.first.firstname %></p>
+        <p style="text-align: center; color: white; position: relative; top: 55px; font-weight: 300;  text-shadow: 1px 0px 6px rgba(0, 0, 0, 1);"><%= @project.users.first.housenumber %></p>
+        <p style="text-align: center;"><%= link_to "Add Progress", new_project_progress_path(@project, @progress), :class => "btn btn-success alugst" %></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="projectssection">
+ 
+<div class="container">
+  <div class="row">
+    <% if @project.progresses.any? %>
+    <%= render @project.progresses %>
+    <% else %>
+      <div class="col-lg-12">
+      <div style="width: 100%; padding: 20px; background-color: white; border-radius: 5px; margin: 15px;">
+       No progress has been made on your job.
+      </div>
+      <div class="col-lg-12">
+        <div class="inviteholder">
+        <h4 style="text-align: center;">You Can Invite someone to help you</h4>
+        <p style="text-align: center;">Kindly enter their email below</p>
+<%= form_for [@project, Job.new] do |f| %>
+  <div>
+<label>Email</label>
+<%= f.text_field :email,:class => "form-control", :placeholder => "Enter Email here", required: true %><br>
+  <%= f.submit "Invite", :class => "btn btn-primary btn-lg" %>
+<%  end %>
+      </div>
+     </div>
+    <% end %>
+   </div>
+  </div>
+</div>
+
+
+
+</section>

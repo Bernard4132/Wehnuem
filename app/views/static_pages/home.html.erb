@@ -1,7 +1,45 @@
 
 <% if signed_in? %>
- <h1> Welcome to Wehnuem. You wave signed in <%= current_user.email %> </h1>
- <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+<style type="text/css">
+
+.aduins{
+ background:linear-gradient(0deg,rgba(0,0,0,0.8),rgba(0,0,0,0.1)),url(https://res.cloudinary.com/nikasemo/image/upload/v1506693479/2broom2_d7gu5a.jpg);
+  background-position:center;
+  min-height: 200px;
+}
+
+</style>
+
+
+<section class="aduins">
+  <div class="container">
+    <div class="row" style="margin-top: 70px">
+      <div class="col-lg-12">
+        <h1 style="text-align: center; color: white; position: relative; top: 65px; font-weight: 900;  text-shadow: 1px 0px 6px rgba(0, 0, 0, 1);">Welcome to your Dashboard, <%= current_user.firstname %></h1>
+        <p style="text-align: center; color: white; position: relative; top: 70px; font-weight: 300;  text-shadow: 1px 0px 6px rgba(0, 0, 0, 1);">From here, you should be able to see all your projects and manage them from here. Kindly view your project(s) below.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="projectssection">
+
+<div class="container">
+  <div class="row">
+    <% if @usersprojects.any? %>
+     <%= render @usersprojects %>
+     <% else %>
+     <div class="col-lg-12">
+      <div style="width: 100%; padding: 20px">
+     You do not have any projects assigned to you.
+      </div>
+     </div>
+     <% end %>
+  </div>
+</div>
+
+</section>
+
 <% else %>
 
  <style type="text/css">
@@ -192,6 +230,7 @@ hr.worksdivider{
 .image {
   width:100%;
   height:400px;
+  margin-bottom: 30px;
   background:linear-gradient(0deg,rgba(0,0,0,0.8),rgba(0,0,0,0.1)),url(https://res.cloudinary.com/nikasemo/image/upload/v1506693479/2broom2_d7gu5a.jpg);
   background-position:center;
   transition: all 1s ease;
@@ -213,6 +252,7 @@ hr.worksdivider{
 .image1 {
   width:100%;
   height:400px;
+  margin-bottom: 30px;
   background:linear-gradient(0deg,rgba(0,0,0,0.8),rgba(0,0,0,0.1)),url(https://res.cloudinary.com/nikasemo/image/upload/v1506693479/3broom_loiygc.jpg);
   background-position:center;
   transition: all 1s ease;
@@ -234,6 +274,7 @@ hr.worksdivider{
 .image2 {
   width:100%;
   height:400px;
+  margin-bottom: 30px;
   background:linear-gradient(0deg,rgba(0,0,0,0.8),rgba(0,0,0,0.1)),url(https://res.cloudinary.com/nikasemo/image/upload/v1506693479/4broom_yngzpx.jpg);
   background-position:center;
   transition: all 1s ease;
@@ -272,6 +313,7 @@ hr.worksdivider{
   border-radius: 5px;
   min-height: 200px;
   padding: 5px;
+  margin-bottom: 20px;
 }
 
 .innerctact:hover{
@@ -295,6 +337,71 @@ box-shadow: 0px 0px 35px -5px rgba(0,0,0,0.7);
   margin-top: 3em;
 }
 
+.capttxt{
+  font-family: 'Righteous', cursive; font-size: 60px; text-shadow: 1px 0px 6px rgba(150, 150, 150, 1);
+}
+
+@media only screen and (min-width : 100px) and (max-width : 600px) {
+
+.capttxt{
+  font-family: 'Righteous', cursive; font-size: 35px; text-shadow: 1px 0px 6px rgba(150, 150, 150, 1);
+}
+
+ .navbackground{
+    background-color: #ffffff;
+  }
+
+  .navbar-light .navbar-brand1{
+font-size: 16px;
+font-weight: 700;
+font-family: 'Poppins', sans-serif;
+
+}
+
+   a {
+  color: #000;
+  text-decoration: none;
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+}
+
+a:hover {
+  color: #000;
+  text-decoration: none;
+}
+
+.facyyt{
+  font-size: 25px;
+  text-align: center;
+}
+
+.famwantyousecthome{
+  font-family: 'Righteous', cursive; 
+  color: white; 
+  font-size: 35px; 
+  text-shadow: 1px 0px 6px rgba(150, 150, 150, 1);
+  position: relative;
+  top: 150px;
+  margin-left: 20px;
+}
+
+.famwantyousecthome2{
+  font-family: 'Asap Condensed', 
+  sans-serif; 
+  letter-spacing: 2px;
+  position: relative;
+  top: 160px;
+  margin-left: 20px;
+  color: #ffffff;
+}
+
+
+
+.actreadm{
+   position: relative;
+  top: 170px;
+  margin-left: 20px;
+}}
 
   </style>
 
@@ -344,31 +451,31 @@ box-shadow: 0px 0px 35px -5px rgba(0,0,0,0.7);
         <div class="carousel-inner" role="listbox">
           <!-- Slide One - Set the background image for this slide in the line below -->
           <div class="carousel-item active" style="background-image: url('https://res.cloudinary.com/nikasemo/image/upload/v1506804677/shutterstock_115010164_qmamyl.jpg')">
-            <div class="carousel-caption d-none d-md-block">
-              <h3 style="font-family: 'Righteous', cursive; font-size: 60px; text-shadow: 1px 0px 6px rgba(150, 150, 150, 1);">Provide a Home to raise your Kids</h3>
+            <div class="carousel-caption d-md-block">
+              <h3 class="capttxt">Provide a Home to raise your Kids</h3>
               <hr class="worksdivider">
               <p style="font-family: 'Asap Condensed', sans-serif; letter-spacing: 2px;">Houses at Wehnuem are furnished with state of the art facilities that will ensure your family enjoys proper treatment while growing in wisdom.</p>
             </div>
           </div>
           <!-- Slide Two - Set the background image for this slide in the line below -->
            <div class="carousel-item" style="background-image: url('https://res.cloudinary.com/nikasemo/image/upload/v1506805932/houseshutterstock_kbdmqp.jpg')">
-            <div class="carousel-caption d-none d-md-block">
-              <h3 style="font-family: 'Righteous', cursive; font-size: 60px; text-shadow: 1px 0px 6px rgba(150, 150, 150, 1);">Provide a Home to raise your Kids</h3>
+            <div class="carousel-caption d-md-block">
+              <h3 class="capttxt" style="">Provide a Home to raise your Kids</h3>
               <hr class="worksdivider">
               <p style="font-family: 'Asap Condensed', sans-serif; letter-spacing: 2px;">Houses at Wehnuem are furnished with state of the art facilities that will ensure your family enjoys proper treatment while growing in wisdom.</p>
             </div>
           </div>
           <!-- Slide Three - Set the background image for this slide in the line below -->
            <div class="carousel-item" style="background-image: url('http://res.cloudinary.com/nikasemo/image/upload/v1506587500/shutterstock_343468046_ffkoef.jpg')">
-            <div class="carousel-caption d-none d-md-block">
-              <h3 style="font-family: 'Righteous', cursive; font-size: 60px; text-shadow: 1px 0px 6px rgba(150, 150, 150, 1);">Provide a Home to raise your Kids</h3>
+            <div class="carousel-caption d-md-block">
+              <h3 class="capttxt">Provide a Home to raise your Kids</h3>
               <hr class="worksdivider">
               <p style="font-family: 'Asap Condensed', sans-serif; letter-spacing: 2px;">Houses at Wehnuem are furnished with state of the art facilities that will ensure your family enjoys proper treatment while growing in wisdom.</p>
             </div>
           </div>
           <div class="carousel-item" style="background-image: url('https://res.cloudinary.com/nikasemo/image/upload/v1506806931/shutterstock_427455487_reuqvf.jpg')">
-            <div class="carousel-caption d-none d-md-block">
-              <h3 style="font-family: 'Righteous', cursive; font-size: 60px; text-shadow: 1px 0px 6px rgba(150, 150, 150, 1);">Provide a Home to raise your Kids</h3>
+            <div class="carousel-caption d-md-block">
+              <h3 class="capttxt">Provide a Home to raise your Kids</h3>
               <hr class="worksdivider">
               <p style="font-family: 'Asap Condensed', sans-serif; letter-spacing: 2px;">Houses at Wehnuem are furnished with state of the art facilities that will ensure your family enjoys proper treatment while growing in wisdom.</p>
             </div>
@@ -388,34 +495,34 @@ box-shadow: 0px 0px 35px -5px rgba(0,0,0,0.7);
     <!-- Page Content -->
     <section class="py-5">
       <div class="container">
-        <h1 class="js-reveal" style="font-family: 'Poppins', sans-serif;">Our facilities protect you and keeps you connected.</h1>
+        <h1 class="js-reveal facyyt" style="font-family: 'Poppins', sans-serif;">Our facilities protect you and keeps you connected.</h1>
         <hr class="worksdivider">
         <div class ="row">
-          <div class="col-sm-2">
+          <div class="col-sm-6 col-lg-2">
             <div class="previtemcont zoomin">
               <p style="text-align: center;"><img src="https://res.cloudinary.com/nikasemo/image/upload/v1506813165/cctv_emvl0n.jpg" class="img-responsive" width="110px" height="110px"></p>
               <p class="mainvps">24 hour CCTV surveilance</p>
             </div>
           </div>
-          <div class="col-sm-2">
+          <div class="col-sm-6 col-lg-2">
             <div class="previtemcont zoomin">
               <p style="text-align: center;"><img src="https://res.cloudinary.com/nikasemo/image/upload/v1506813165/digitalentry_qaggxl.jpg" class="img-responsive" width="110px" height="110px"></p>
                <p class="mainvps">Digital Entry</p>
             </div>
           </div>
-          <div class="col-sm-2">
+          <div class="col-sm-6 col-lg-2">
             <div class="previtemcont zoomin">
               <p style="text-align: center;"><img src="https://res.cloudinary.com/nikasemo/image/upload/v1506813165/wifirouter_j2w7bw.jpg" class="img-responsive" width="110px" height="110px"></p>
                <p class="mainvps">Free Community Wifi</p>
             </div>
           </div>
-           <div class="col-sm-2">
+           <div class="col-sm-6 col-lg-2">
             <div class="previtemcont zoomin">
               <p style="text-align: center;"><img src="http://res.cloudinary.com/nikasemo/image/upload/v1506813165/genset_ovcuc1.jpg" class="img-responsive" width="110px" height="110px"></p>
                <p class="mainvps">StandBy Generator</p>
             </div>
           </div>
-           <div class="col-sm-2">
+           <div class="col-sm-6 col-lg-2">
             <div class="previtemcont zoomin">
               <p style="text-align: center;"><img src="https://res.cloudinary.com/nikasemo/image/upload/v1506813165/learnarea_qlawvm.jpg" class="img-responsive" width="110px" height="110px"></p>
                <p class="mainvps">Learning Area</p>

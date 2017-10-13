@@ -1,4 +1,4 @@
-source 'http://rubygems.org'
+source 'https://rubygems.org'
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -31,7 +31,11 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'devise'
 
+gem 'devise_invitable'
+
 gem 'bcrypt', '~> 3.1.11', platforms: [:ruby, :x64_mingw, :mingw]
+
+gem 'redcarpet', '~> 3.0.0'
 
 gem 'carrierwave', '~> 1.0'
 

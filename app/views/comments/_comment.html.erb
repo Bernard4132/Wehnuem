@@ -1,0 +1,22 @@
+<style type="text/css">
+
+.constyle{
+	padding: 7px; 
+	border-radius: 5px; 
+	background-color: #f2f2f2; 
+	border: 1px solid #d9d9d9; 
+	margin: 10px;
+	-webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.25);
+    -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.25);
+    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.25);
+}
+
+</style>
+
+<p class="constyle">
+<% if comment.user.present? %>
+<span style="font-weight: 500;"><%= comment.user.firstname %></span>
+<% end %>
+<br>
+<span style="color: #595959;"><%= comment.body %></span>
+</p>

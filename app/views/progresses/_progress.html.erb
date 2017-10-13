@@ -1,7 +1,22 @@
-<div style="background-color: yellow; padding: 10px; margin-bottom: 5px;">
-<p><%= progress.title %></p>
-<p><%= progress.description %></p>
-<ul>
+
+<style type="text/css">
+.progresshold{
+  background-color: #ffffff;
+  border-radius: 10px;
+  margin: 15px;
+  padding: 20px;
+  border: 1px solid #cccccc;
+}
+
+</style>
+
+<div class="col-lg-12">
+<div class="progresshold">
+<h2 style="text-align: left; font-family: 'Poppins', sans-serif;"><%= progress.title %></h2>
+<p style="font-weight: 300;"><%= markdown(progress.description) %></h4>
+<div class="row">
 <%= render progress.photos %>
-</ul>
+</div>
+<p><a href="/projects/<%= @project.id %>/progresses/<%= progress.id %>" class="btn btn-primary">View Progress</a></p>
+</div>
 </div>
