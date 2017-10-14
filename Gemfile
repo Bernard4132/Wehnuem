@@ -43,6 +43,8 @@ gem "mini_magick"
 
 gem "rolify"
 
+gem 'fog'
+
 group :production do
 gem 'pg'
 gem 'rails_12factor'

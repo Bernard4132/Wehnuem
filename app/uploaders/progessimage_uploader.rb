@@ -4,8 +4,14 @@ class ProgessimageUploader < CarrierWave::Uploader::Base
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
 
-  # Choose what kind of storage to use for this uploader:
+ # Choose what kind of storage to use for this uploader:
+  if Rails.env.production?
+    storage :fog
+  end
+
+  if Rails.env.development?
   storage :file
+  end
   # storage :fog
 
   # Override the directory where uploaded files will be stored.
