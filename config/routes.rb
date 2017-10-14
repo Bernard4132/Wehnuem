@@ -27,4 +27,5 @@ Rails.application.routes.draw do
   match 'contact', to: 'static_pages#contact', via: 'get'
   match 'faqs', to: 'static_pages#faqs', via: 'get'
   match 'terms', to: 'static_pages#terms', via: 'get'
+  match 'dashboard', to: 'static_pages#dashboard', via: 'get'
 end

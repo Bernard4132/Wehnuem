@@ -6,6 +6,13 @@ def home
 	end
 end
 
+def dashboard
+	if signed_in?
+		@allprojects = Project.all
+		@allusers = User.all
+	end
+end
+
 def about	
 end
 

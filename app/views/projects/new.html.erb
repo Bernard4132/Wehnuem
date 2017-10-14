@@ -42,7 +42,7 @@
 
   <div class="form-group">
     <label>Project Owner:</label><br>
-   <%= form.collection_select :user_ids, User.all, :id, :email, {prompt: "Project Owner"}, 
+   <%= form.collection_select :user_ids, User.all, :id, :housenumber, {prompt: "Project Owner"}, 
     {:required => true, class: "select", style: "width: 100%;"} %>
   </div>
 

@@ -1,0 +1,45 @@
+<style type="text/css">
+
+.constyle{
+	padding: 7px; 
+	border-radius: 5px; 
+	background-color: #ffffff; 
+	border: 1px solid #d9d9d9; 
+	margin: 10px;
+	
+}
+
+</style>
+
+
+<br><br><br><br>
+<div class="container">
+	<div class="row">
+		<div class="col-lg-12">
+			<p style="text-align: center; font-weight: 300;">Hello Admin, you are welcome to your dashboard. Manage projects and users from Here.</p>
+			<p style="text-align: center;"><a href="/projects/new" class="btn btn-success btn-lg">Create a New Project</a></p>
+			<br>
+			<hr>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="row">
+		<div class="col-lg-6 col-md-12">
+			<h5>All Client Projects</h5>
+			<%= render @allprojects %>
+		</div>
+		<div class="col-lg-6 col-md-12">
+			<h5>All my Clients</h5>
+			<% @allusers.each do |user| %>
+             <p class="constyle">
+             <span><%= user.firstname %> <%= user.lastname %></span><br>
+             <span><%= user.housenumber %></span><br>
+             <span><%= user.projects.count %> project(s)</span>
+             </p>
+			<% end %>
+		</div>
+	</div>
+</div>
+<hr>
+<br><br>
