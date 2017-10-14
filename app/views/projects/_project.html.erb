@@ -30,9 +30,7 @@ box-shadow: 0px 0px 15px -1px rgba(0,0,0,0.4);
        <span style="margin-bottom: 10px;"><strong>Project Title:</strong> <%= project.name %></span><br>
        <span style="margin-bottom: 10px;"><strong>Project Owner:</strong> <%= project.users.first.firstname %></span><br>
        <span style="margin-bottom: 10px;"><strong>Owner's House Number:</strong> <%= project.users.first.housenumber %></span>
-       <% if current_user.has_role?(:admin) %>
        <p style="margin-top: 20px;"><%= link_to "Go to Project" , project, :class => "btn btn-primary" %></p>
-       <% end %>
       </div>
     </div>
 	

@@ -34,7 +34,9 @@
         <h1 style="text-align: center; color: white; position: relative; top: 65px; font-weight: 900;  text-shadow: 1px 0px 6px rgba(0, 0, 0, 1);"><%= @project.name %></h1>
         <p style="text-align: center; color: white; position: relative; top: 70px; font-weight: 300;  text-shadow: 1px 0px 6px rgba(0, 0, 0, 1);"><%= @project.users.first.firstname %></p>
         <p style="text-align: center; color: white; position: relative; top: 55px; font-weight: 300;  text-shadow: 1px 0px 6px rgba(0, 0, 0, 1);"><%= @project.users.first.housenumber %></p>
+         <% if current_user.has_role?(:admin) %>
         <p style="text-align: center;"><%= link_to "Add Progress", new_project_progress_path(@project, @progress), :class => "btn btn-success alugst" %></p>
+         <% end %>
       </div>
     </div>
   </div>
