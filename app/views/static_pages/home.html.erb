@@ -8,6 +8,37 @@
   min-height: 200px;
 }
 
+@media only screen and (min-width : 100px) and (max-width : 600px) {
+
+  .navbar-light .navbar-brand1{
+font-size: 13px;
+font-weight: 700;
+font-family: 'Poppins', sans-serif;
+}
+
+.aduins{
+ background:linear-gradient(0deg,rgba(0,0,0,0.8),rgba(0,0,0,0.1)),url(https://res.cloudinary.com/nikasemo/image/upload/v1506693479/2broom2_d7gu5a.jpg);
+  background-position:center;
+  height: auto;
+  padding-bottom: 100px;
+}
+
+.innerctact{
+  background-color: #ddd;
+  border: 1px solid #b3b3b3;
+  border-radius: 5px;
+  min-height: 200px;
+  padding: 5px;
+  margin-bottom: 20px;
+}
+
+.mobilefonthp{
+  font-size: 25px;
+}
+
+
+}
+
 </style>
 
 
@@ -15,7 +46,7 @@
   <div class="container">
     <div class="row" style="margin-top: 70px">
       <div class="col-lg-12">
-        <h1 style="text-align: center; color: white; position: relative; top: 65px; font-weight: 900;  text-shadow: 1px 0px 6px rgba(0, 0, 0, 1);">Welcome to your Dashboard, <%= current_user.firstname %></h1>
+        <h1 style="text-align: center; color: white; position: relative; top: 65px; font-weight: 900;  text-shadow: 1px 0px 6px rgba(0, 0, 0, 1);" class="mobilefonthp">Welcome to your Dashboard, <%= current_user.firstname %></h1>
         <p style="text-align: center; color: white; position: relative; top: 70px; font-weight: 300;  text-shadow: 1px 0px 6px rgba(0, 0, 0, 1);">From here, you should be able to see all your projects and manage them from here. Kindly view your project(s) below.</p>
       </div>
     </div>
