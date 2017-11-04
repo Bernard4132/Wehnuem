@@ -54,6 +54,37 @@ Rails.application.configure do
   # Prepend all log lines with the following tags.
   config.log_tags = [ :request_id ]
 
+  config.action_mailer.raise_delivery_errors = false
+  # Specifies the header that your server uses for sending files.
+  # config.action_dispatch.x_sendfile_header = "X-Sendfile" # for apache
+  # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for nginx
+  config.action_mailer.default_url_options = { host: 'www.wehnaumgatedcommunity.com' }
+
+  config.action_mailer.delivery_method = :smtp
+
+  ActionMailer::Base.smtp_settings = {
+     :address    => 'smtp.sendgrid.net',
+     :port       => '587',
+     :authentication  => :plain,
+     :user_name => ENV['SENDGRID_USERNAME'],
+     :password  => ENV['SENDGRID_PASSWORD'],
+     :domain   =>  'heroku.com',
+     :enable_starttls_auto => true
+  }
+  
+
+  # Set to :debug to see everything in the log.
+  config.log_level = :info
+
+  # Prepend all log lines with the following tags.
+  # config.log_tags = [ :subdomain, :uuid ]
+  # config/environments/production.rb
+  config.action_mailer.default_url_options = { :host => 'wehnaumgatedcommunity.com' }
+  # Use a different logger for distributed setups.
+  # config.logger = ActiveSupport::TaggedLogging.new(SyslogLogger.new)
+  config.action_mailer.asset_host = 'http://wehnaumgatedcommunity.com'
+
+
   # Use a different cache store in production.
   # config.cache_store = :mem_cache_store
 

@@ -5,6 +5,8 @@ class User < ApplicationRecord
   devise :invitable, :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   
+  attr_accessor :current_password
+
   attribute :email, :string
 
   after_create :assign_default_role
