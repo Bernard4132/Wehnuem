@@ -483,7 +483,12 @@ a:hover {
     </nav>
 
     <header>
-
+<% if notice %>
+<div class="alert alert-success alert-dismissible" role="alert" style="position: absolute; top: 100px; z-index: 99999;>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <p class="notice"><%= notice %></p>
+</div>
+<% end %>
  
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">

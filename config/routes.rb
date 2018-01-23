@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
  
+  resources :leads
   resources :contacts
   resources :houses
   resources :homes
@@ -29,4 +30,5 @@ Rails.application.routes.draw do
   match 'faqs', to: 'static_pages#faqs', via: 'get'
   match 'terms', to: 'static_pages#terms', via: 'get'
   match 'dashboard', to: 'static_pages#dashboard', via: 'get'
+  match 'clientsland', to: 'static_pages#clientsland', via: 'get'
 end

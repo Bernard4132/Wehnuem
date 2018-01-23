@@ -40,4 +40,8 @@ end
 def terms
 end
 
+def clientsland
+    @lead = Lead.new
+end
+
 end
