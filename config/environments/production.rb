@@ -45,7 +45,7 @@ Rails.application.configure do
   # config.action_cable.allowed_request_origins = [ 'http://example.com', /http:\/\/example.*/ ]
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
-  # config.force_ssl = true
+  config.force_ssl = true
 
   # Use the lowest log level to ensure availability of diagnostic information
   # when problems arise.
@@ -82,7 +82,7 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { :host => 'wehnaumgatedcommunity.com' }
   # Use a different logger for distributed setups.
   # config.logger = ActiveSupport::TaggedLogging.new(SyslogLogger.new)
-  config.action_mailer.asset_host = 'http://wehnaumgatedcommunity.com'
+  config.action_mailer.asset_host = 'https://wehnaumgatedcommunity.com'
 
 
   # Use a different cache store in production.
