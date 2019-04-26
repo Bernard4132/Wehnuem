@@ -1,0 +1,53 @@
+<%= form_with(model: book, local: true) do |form| %>
+  <% if book.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(book.errors.count, "error") %> prohibited this book from being saved:</h2>
+
+      <ul>
+      <% book.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :book_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phonenumber %>
+    <%= form.text_field :phonenumber, id: :book_phonenumber %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email, id: :book_email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :schedate %>
+    <%= form.datetime_select :schedate, id: :book_schedate %>
+  </div>
+
+  <div class="form-group">
+      <label>Appointed date</label>
+                <div class='input-group date' id='datetimepicker1'>
+                    
+    <%= form.text_field :addinf, id: :book_addinf, :class => "form-control", :type => "date", :required => "required" %>
+                    <span class="input-group-addon">
+                        <i class="fa fa-calendar-o" aria-hidden="true"></i>
+                    </span>
+                </div>
+            </div>
+
+  <div class="field">
+    <%= form.label :addinf %>
+    <%= form.text_area :addinf, id: :book_addinf %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

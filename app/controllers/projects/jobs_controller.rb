@@ -13,6 +13,7 @@ class Projects::JobsController < ApplicationController
   end
   end
 
+
   private
     def set_project
       @project = current_user.projects.find(params[:project_id])

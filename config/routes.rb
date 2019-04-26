@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
  
+  resources :books
   resources :leads
   resources :contacts
   resources :houses
