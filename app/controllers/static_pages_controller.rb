@@ -29,6 +29,7 @@ def fourbedroom
 end
 
 def apply
+	@wehnlead =  Wehnlead.new
 end
 
 def contact

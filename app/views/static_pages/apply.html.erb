@@ -1,0 +1,120 @@
+<style type="text/css">
+
+	body {
+		background-image: url(https://res.cloudinary.com/nikasemo/image/upload/v1581411674/patternbg_puku8a.jpg);
+
+	}
+
+	.holdsect {
+		padding: 20px;
+		margin-top: 30px;
+		font-family: 'Montserrat', sans-serif;
+	}
+
+	.holdform {
+		background-color: #029c0e;
+		width: 100%;
+		height: 409px;
+		padding: 20px;
+	}
+
+	.formenter {
+		width: 100%;
+		background-color: #ff0000;
+		border: none;
+		color: #ffffff;
+		padding: 10px;
+		font-size: 20px;
+		margin-top: 20px;
+	}
+
+	.holdformtext {
+		padding-left: 40px;
+		padding-right: 40px;
+	}
+
+</style>
+
+<body>
+
+<section class="holdsect">
+
+	
+	<div class="row" style="background-color: #ffffff; margin-bottom: 30px; border-bottom: 1px solid #029c0e; 
+	border-top: 1px solid #029c0e;">
+		<div class="col-lg-12">
+			<p style="text-align: center;">
+			<img src="https://res.cloudinary.com/nikasemo/image/upload/v1581412147/WehnaumLogo_hbrqkq.png" height="70px">
+			<span style="font-size: 20px; font-weight: 600; color: #029c0e;">0244724589</span>
+			</p>
+		</div>
+	</div>
+	
+
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 holdformtext">
+				<h3 style="text-align: center; color: #029c0e;">Ready to give your family the ultimate Gift?</h3>
+				<p style="text-align: center; font-size: 16px;">
+					Join our prestigious group of forward thinking clients  and become a member of Wehnaum Gated Community. With as little as US$1000(payable in GH¢) you will become a proud owner of a two story two bedroom house while we spread the remaining cost for you in years.
+				</p>
+				<h5 style="text-align: center; color: #029c0e;">
+					Leave a great inheritance for your family?
+				</h5>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+    	<div class="row justify-content-md-center" style="margin-top: 30px;">
+         <div class="col-sm-12 col-md-10 col-md-offset-1">
+         	<div class="row no-gutters">
+         		<div class="col-lg-8 col-12">
+         			<img src="https://res.cloudinary.com/nikasemo/image/upload/v1581408310/5e425fd3c62ac_vhxb3r.png" class="img-fluid">
+         		</div>
+         		<div class="col-lg-4 col-12">
+         			<div class="holdform">
+         				<h5 style="text-align: center; color: #ffffff;">Enter your Details</h5>
+         				<p style="text-align: center; color: #ffffff; font-size: 12px;">You will be contacted shortly.</p>
+         				<%= form_with(model: @wehnlead, local: true) do |form| %>
+						  <% if @wehnlead.errors.any? %>
+						    <div id="error_explanation">
+						      <h2><%= pluralize(@wehnlead.errors.count, "error") %> prohibited this wehnlead from being saved:</h2>
+
+						      <ul>
+						      <% @wehnlead.errors.full_messages.each do |message| %>
+						        <li><%= message %></li>
+						      <% end %>
+						      </ul>
+						    </div>
+						  <% end %>
+
+						  <div class="form-group">
+						    <label style="color: white; font-size: 12px;">Name</label>
+						    <%= form.text_field :name, id: :wehnlead_name, :class => "form-control", :Placeholder => "Name" %>
+						  </div>
+
+						  <div class="form-group">
+						    <label style="color: white; font-size: 12px;">Email</label>
+						    <%= form.text_field :email, id: :wehnlead_email, :class => "form-control", :Placeholder => "Email"  %>
+						  </div>
+
+						  <div class="form-group">
+						    <label style="color: white; font-size: 12px;">Phone number</label>
+						    <%= form.text_field :phonenumber, id: :wehnlead_phonenumber, :class => "form-control", :Placeholder => "Phone number"  %>
+						  </div>
+
+						  <div class="form-group">
+						    <%= form.submit "Start Now", :class => "formenter" %>
+						  </div>
+						<% end %>
+         			</div>
+         		</div>
+         	</div>
+         </div>
+     </div>
+ </div>
+
+</section>
+
+</body>

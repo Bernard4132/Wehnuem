@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @wehnlead.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @wehnlead.email %>
+</p>
+
+<p>
+  <strong>Phonenumber:</strong>
+  <%= @wehnlead.phonenumber %>
+</p>
+
+<%= link_to 'Edit', edit_wehnlead_path(@wehnlead) %> |
+<%= link_to 'Back', wehnleads_path %>

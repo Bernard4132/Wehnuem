@@ -1,0 +1,32 @@
+<%= form_with(model: wehnlead, local: true) do |form| %>
+  <% if wehnlead.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(wehnlead.errors.count, "error") %> prohibited this wehnlead from being saved:</h2>
+
+      <ul>
+      <% wehnlead.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :wehnlead_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email, id: :wehnlead_email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phonenumber %>
+    <%= form.text_field :phonenumber, id: :wehnlead_phonenumber %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

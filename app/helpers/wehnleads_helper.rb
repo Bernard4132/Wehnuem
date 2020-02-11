@@ -1,0 +1,2 @@
+module WehnleadsHelper
+end

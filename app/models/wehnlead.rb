@@ -1,0 +1,2 @@
+class Wehnlead < ApplicationRecord
+end
