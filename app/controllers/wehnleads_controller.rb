@@ -69,6 +69,6 @@ class WehnleadsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def wehnlead_params
-      params.require(:wehnlead).permit(:name, :email, :phonenumber)
+      params.require(:wehnlead).permit(:name, :email, :phonenumber, :meref)
     end
 end
