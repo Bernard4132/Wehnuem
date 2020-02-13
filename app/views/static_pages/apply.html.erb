@@ -91,7 +91,8 @@
 
 						  <div class="form-group">
 						    <label style="color: white; font-size: 12px;">Name</label>
-						    <%= form.text_field :name, id: :wehnlead_name, :class => "form-control", :Placeholder => "Name" %>
+						    <%= form.text_field :name, id: :wehnlead_name, :class => "form-control", :Placeholder => "Name"
+						    , :required => "required" %>
 						  </div>
 
 						  <div class="form-group">
@@ -101,7 +102,7 @@
 
 						  <div class="form-group">
 						    <label style="color: white; font-size: 12px;">Phone number</label>
-						    <%= form.text_field :phonenumber, id: :wehnlead_phonenumber, :class => "form-control", :Placeholder => "Phone number"  %>
+						    <%= form.text_field :phonenumber, id: :wehnlead_phonenumber, :class => "form-control", :Placeholder => "Phone number" , :required => "required" %>
 						  </div>
 
 						  <div class="form-group" style="display: none;">
