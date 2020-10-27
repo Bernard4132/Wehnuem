@@ -78,7 +78,7 @@ GEM
       actionmailer (>= 4.1.0)
       devise (>= 4.0.0)
     erubi (1.6.1)
-    excon (0.59.0)
+    excon (0.72.0)
     execjs (2.7.0)
     ffi (1.9.18)
     ffi (1.9.18-x86-mingw32)
